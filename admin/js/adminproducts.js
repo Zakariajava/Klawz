@@ -72,7 +72,7 @@ function addProduct(event) {
     category,
     subcategory: subcat,
     price,
-    images: [imgMain],  // si quieres más sub-imágenes, amplía
+    images: [imgMain], 
     description: "",
     featured: false
   };
