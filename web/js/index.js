@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentBg = 0;
   const homeSection = document.getElementById('home');
 
-  // Crear overlay para transición (opcional)
+  // Crear overlay para transición 
   const overlay = document.createElement('div');
   overlay.className = 'bg-overlay';
   homeSection.appendChild(overlay);
@@ -91,20 +91,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /** 
  * Renderiza la sección "Featured" 
- * En tu JSON, los productos con "featured": true
+ * los productos con "featured": true
  * Cogemos 4 de ellos (si hay más de 4, recortamos)
  */
 function renderFeatured(products) {
   let featuredProducts = products.filter((p) => p.featured === true);
 
-  // Si quieres mezclarlos al azar, descomenta la siguiente línea:
-  // shuffleArray(featuredProducts);
-
   // Coge solo 4
   featuredProducts = featuredProducts.slice(0, 4);
 
   const container = document.getElementById('featured-list');
-  container.innerHTML = ''; // vaciamos por si acaso
+  container.innerHTML = ''; 
 
   featuredProducts.forEach((prod) => {
     container.innerHTML += buildProductHTML(prod);
@@ -113,7 +110,7 @@ function renderFeatured(products) {
 
 /** 
  * Renderiza la sección "Dresses & Jumpsuits"
- * Por ejemplo, filtrando "mujer" + subcategory "vestidos" (o como lo tengas en tu JSON).
+ * Por ejemplo, filtrando "mujer" + subcategory "vestidos" 
  * Coge 4
  */
 function renderDresses(products) {
@@ -132,8 +129,6 @@ function renderDresses(products) {
 
 /** 
  * Renderiza la sección "Watches"
- * Suponemos que en tu JSON la subcategoría es 'relojes' 
- * (y da igual si es hombre o mujer).
  */
 function renderWatches(products) {
   let watches = products.filter((p) => p.subcategory === 'relojes');
@@ -149,7 +144,6 @@ function renderWatches(products) {
 
 /** 
  * Renderiza la sección "Shoes"
- * Suponemos que la subcategoría es 'zapatillas'.
  */
 function renderShoes(products) {
   let shoes = products.filter((p) => p.subcategory === 'zapatillas');
@@ -224,8 +218,7 @@ function addToCart(productId) {
 }
 
 /**
- * shuffleArray: función opcional para barajar arrays 
- * (útil si quieres sacar 4 aleatorios)
+ * shuffleArray: para sacar 4 aleatorios
  */
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
