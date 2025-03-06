@@ -11,11 +11,12 @@ let currentPage = 1;
 const pageSize = 12; // cantidad de productos por página
 
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('../../productos.json') // AJUSTA la ruta si es necesario
+  fetch('../../productos.json')
     .then((resp) => resp.json())
     .then((data) => {
       allProducts = data;
-      renderShopPage(currentPage); // Renderizamos la 1a página
+      // Renderizamos la 1a página
+      renderShopPage(currentPage); 
     })
     .catch((err) => console.error('Error cargando productos:', err));
 });

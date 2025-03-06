@@ -1,10 +1,6 @@
-/*****************************************************
- * cart.js (versión con cupón "DAW" => -20% de descuento)
- ****************************************************/
-
 let allProducts = [];
-let currentDiscount = 0; // Cantidad de descuento en €
-let shippingCost = 5;   // En tu ejemplo, un envío fijo
+let currentDiscount = 0; 
+let shippingCost = 5;  
 
 document.addEventListener('DOMContentLoaded', () => {
   fetch('../../productos.json')
@@ -24,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
   applyCouponBtn.addEventListener('click', applyCoupon);
 });
 
-/** renderCartItems() - idéntico a antes */
 function renderCartItems() {
   const cartTableBody = document.querySelector('#cart-table tbody');
   cartTableBody.innerHTML = '';
@@ -72,7 +67,6 @@ function renderCartItems() {
   updateTotals();
 }
 
-/** updateQuantity(productId, newQty) - igual que antes */
 function updateQuantity(productId, newQty) {
   newQty = parseInt(newQty, 10);
   if (newQty < 1) newQty = 1;
@@ -97,7 +91,6 @@ function updateQuantity(productId, newQty) {
   updateTotals();
 }
 
-/** removeItem(productId) - igual que antes */
 function removeItem(productId) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   cart = cart.filter((i) => i.productId !== productId);
@@ -163,7 +156,6 @@ function applyCoupon() {
     alert('Cupón no válido. Inténtalo de nuevo.');
   }
 
-  // Forzamos recalcular totales
   updateTotals();
 }
 

@@ -43,13 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const addCartBtn = document.getElementById('addCartBtn');
     const quantityInput = document.getElementById('prod-quantity');
   
-    // Asigna valores
+    // texto predefinido 
     nameEl.textContent = product.name;
     categoryEl.textContent = product.category + ' / ' + product.subcategory;
     priceEl.textContent = product.price.toFixed(2) + ' €';
     descEl.textContent = product.description || 'Sin descripción.';
   
-    // Imagen principal (la primera)
+    // Imagen principal
     if (product.images && product.images.length > 0) {
       mainImgEl.src = "../../" + product.images[0];
     } else {
